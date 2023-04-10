@@ -3,7 +3,7 @@ import numpy as np
 from sklearn.linear_model import LinearRegression
 #firma= spolka +'csv'
 # Wczytanie danych z pliku CSV
-df = pd.read_csv('MBANK.csv', parse_dates=['Data'],dayfirst=True)
+df = pd.read_csv('CCC.csv', parse_dates=['Data'],dayfirst=True)
 df.set_index('Data', inplace=True)
 
 # Określenie okresu przewidywania

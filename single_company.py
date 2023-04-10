@@ -30,11 +30,12 @@ for company in companies:
         writer = csv.writer(csvfile)
 
         # Zapisanie nagłówków kolumn
-        writer.writerow(['Data', 'Otwarcie', 'Najwyzszy', 'Najnizszy', 'Zamkniecie', 'Wolumen', 'Zmiana %'])
-
+        writer.writerow(['Data', 'Otwarcie', 'Najwyzszy', 'Najnizszy', 'Zamkniecie', 'Wolumen', 'Zmiana %','index'])
+        j=0
         # Pętla po wierszach tabeli (pomiń pierwszy wiersz z nagłówkami kolumn)
-        for i in range(6):
+        for i in range(1):
             for row in rows[1:]:
+                j=j+1
                 # Pobranie kolumn z danymi historycznymi
                 columns = row.find_all('td')
                 if len(columns) == 0:  # pomijamy wiersze bez kolumn
@@ -46,7 +47,8 @@ for company in companies:
                 close = columns[4].text.strip()
                 volume = str.replace(columns[5].text.strip(),' ','')
                 change = round((float(open_price)/float(close) *100 -100),2)
+                index= j
 
                 # Zapisanie danych do pliku CSV
-                writer.writerow([date, open_price, high, low, close, volume, change])
+                writer.writerow([date, open_price, high, low, close, volume, change,index])
             strona += 1

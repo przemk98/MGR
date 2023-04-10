@@ -22,7 +22,7 @@ for i, contour in enumerate(contours):
     if len(approx) == 3:
         print("Wykryto trójkąt - możliwa formacja Spadającej Gwiazdy")
     elif len(approx) == 4:
-        print("Wykryto czworokąt - możliwa formacja Młotka lub Wiszącego Człowieka")
+        print("Wykryto czworokąt - możliwa formacja Młotka lub Wisielca")
     elif len(approx) == 5:
         print("Wykryto pięciokąt - możliwa formacja Diamentu")
     elif len(approx) == 6:
